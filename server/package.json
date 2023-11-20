@@ -1,4 +1,15 @@
 {
+	"name": "linkx",
+	"version": "1.0.0",
+	"description": "LinkX is a full-stack MERN app featuring social media functionalities such as post, like, upload, etc.",
+	"main": "index.js",
+	"type": "module",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
 	"dependencies": {
 		"express": "^4.18.2",
 		"body-parser": "^1.20.2",
