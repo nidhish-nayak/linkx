@@ -3,13 +3,14 @@ import cors from "cors";
 import dotenv from "dotenv";
 import express from "express";
 import helmet from "helmet";
+import { register } from "module";
 import mongoose from "mongoose";
 import morgan from "morgan";
 import multer from "multer";
 import path from "path";
 import { fileURLToPath } from "url";
 
-// CONFIGURATIONS (middlewares)
+// CONFIGURATIONS
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 dotenv.config();
@@ -24,7 +25,7 @@ app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 app.use(cors());
 app.use("/assets", express.static(path.join(__dirname, "public/assets")));
 
-// FILE STORAGE & UPLOAD (from docs on multer github)
+// FILE STORAGE & UPLOAD
 const storage = multer.diskStorage({
 	destination: function (req, file, cb) {
 		cb(null, "public/assets");
@@ -34,6 +35,9 @@ const storage = multer.diskStorage({
 	},
 });
 const upload = multer({ storage });
+
+// ROUTES WITH FILES
+app.post("/auth/register", upload.single("picture"), register);
 
 // MONGOOSE SETUP
 const PORT = process.env.PORT || 6001;
