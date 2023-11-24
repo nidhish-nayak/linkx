@@ -5,21 +5,29 @@ const Login = () => {
 		<div className="login">
 			<div className="card">
 				<div className="left">
-					<h1>Hello World.</h1>
-					<p>
-						Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt,
-						expedita animi ad repellat odio quisquam consequatur impedit fugit
-						cum aspernatur, assumenda, harum iste aliquam hic laudantium nostrum
-						libero molestias ullam?
-					</p>
-					<span>Don't you have an account?</span>
-					<button>Register</button>
+					<div className="left-heading">
+						<h1>LinkX.</h1>
+						<p>
+							Welcome to our vibrant social media community, where meaningful
+							connections thrive! Immerse yourself in a world of shared
+							experiences, as our platform seamlessly brings together like
+							minded individuals. Join us on a journey of authentic expression
+							and community engagement.
+						</p>
+					</div>
+					<div className="left-register">
+						<span>Don't have an account ?</span>
+						<button>Register</button>
+					</div>
 				</div>
 				<div className="right">
-					<h1>Login</h1>
+					<div>
+						<h2>Already have an account ?</h2>
+						<p>Sign in with your email and password</p>
+					</div>
 					<form action="">
-						<input type="text" placeholder="Username" />
-						<input type="password" placeholder="Password" />
+						<input type="text" placeholder="Username:" />
+						<input type="password" placeholder="Password:" />
 						<button>Login</button>
 					</form>
 				</div>

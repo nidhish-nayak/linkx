@@ -1,25 +1,149 @@
 .login {
+  height: 100vh;
+  background-color: #f7f7f7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2em;
 
   .card {
+    max-width: 1024px;
+    display: flex;
+    background-color: white;
+    border-radius: 10px;
+    min-height: 600px;
+    overflow: hidden;
 
     .left {
-      h1 {}
+      flex: 1;
+      background: linear-gradient(rgb(25, 25, 25), rgba(0, 0, 0, 0.5)),
+        url("https://ik.imagekit.io/fabric01/linkx/friends.webp?updatedAt=1700850423220") center;
+      background-size: cover;
+      padding: 50px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      color: white;
 
-      p {}
+      .left-heading {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
 
-      span {}
+        h1 {
+          font-size: 4rem;
+          line-height: 100px;
+        }
 
-      button {}
+        p {
+          font-size: 1rem;
+        }
+      }
+
+      .left-register {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        span {
+          font-size: 1.05rem;
+          font-weight: 500;
+        }
+
+        button {
+          width: min-content;
+          padding: 10px 30px;
+          border: none;
+          text-transform: uppercase;
+          background-color: white;
+          font-weight: bold;
+          cursor: pointer;
+          border-radius: 2px;
+
+          &:hover {
+            background-color: #e4e4e4;
+          }
+        }
+      }
     }
 
     .right {
-      h1 {}
+      flex: 1;
+      padding: 50px;
+      display: flex;
+      flex-direction: column;
+      gap: 50px;
+      justify-content: center;
+
+      div {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        h2 {
+          color: black;
+        }
+
+        p {
+          color: black
+        }
+      }
 
       form {
-        input {}
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
 
-        button {}
+        input {
+          border: none;
+          border-bottom: 1px solid lightgray;
+          padding: 10px 5px;
+          font-size: 1rem;
+
+          &::placeholder {
+            font-size: 0.9rem;
+          }
+
+          &:focus {
+            outline: none;
+          }
+        }
+
+        button {
+          width: min-content;
+          padding: 10px 30px;
+          border: none;
+          font-weight: bold;
+          text-transform: uppercase;
+          background-color: #938eef;
+          color: white;
+          cursor: pointer;
+          border-radius: 2px;
+          transition: 250ms;
+
+          &:hover {
+            background-color: #333;
+          }
+        }
       }
     }
+
+    @media (max-width: 1024px) {
+      .left {
+        gap: 60px;
+      }
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .card {
+      flex-direction: column;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .login {
+    height: min-content;
   }
 }
