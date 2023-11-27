@@ -115,14 +115,14 @@
           border: none;
           font-weight: bold;
           text-transform: uppercase;
-          background-color: #938eef;
+          background-color: #333;
           color: white;
           cursor: pointer;
           border-radius: 2px;
           transition: 250ms;
 
           &:hover {
-            background-color: #333;
+            background-color: #000;
           }
         }
       }

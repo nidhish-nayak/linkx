@@ -1,0 +1,164 @@
+.register {
+  height: 100vh;
+  background-color: #f5f5f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2em;
+
+  .card {
+    max-width: 1024px;
+    display: flex;
+    flex-direction: row-reverse;
+    background-color: white;
+    border-radius: 10px;
+    min-height: 600px;
+    overflow: hidden;
+
+    .left {
+      flex: 1;
+      background: linear-gradient(rgb(25, 25, 25), rgba(0, 0, 0, 0.5)),
+        url("https://images.pexels.com/photos/4881619/pexels-photo-4881619.jpeg?auto=compress&cs=tinysrgb&w=1600") center;
+      background-size: cover;
+      padding: 50px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      color: white;
+
+      .left-heading {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+
+        h1 {
+          font-size: 4rem;
+          line-height: 100px;
+        }
+
+        p {
+          font-size: 1rem;
+        }
+      }
+
+      .left-register {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        span {
+          font-size: 1.05rem;
+          font-weight: 500;
+        }
+
+        button {
+          width: min-content;
+          padding: 10px 30px;
+          border: none;
+          text-transform: uppercase;
+          background-color: white;
+          font-weight: bold;
+          cursor: pointer;
+          border-radius: 2px;
+
+          &:hover {
+            background-color: #e4e4e4;
+          }
+        }
+      }
+    }
+
+    .right {
+      flex: 1;
+      padding: 50px;
+      display: flex;
+      flex-direction: column;
+      gap: 50px;
+      justify-content: center;
+
+      div {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        h2 {
+          color: black;
+        }
+
+        p {
+          color: black
+        }
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+
+        input {
+          border: none;
+          border-bottom: 1px solid lightgray;
+          padding: 10px 5px;
+          font-size: 1rem;
+
+          &::placeholder {
+            font-size: 0.9rem;
+          }
+
+          &:focus {
+            outline: none;
+          }
+        }
+
+        button {
+          width: min-content;
+          padding: 10px 30px;
+          border: none;
+          font-weight: bold;
+          text-transform: uppercase;
+          background-color: #333;
+          color: white;
+          cursor: pointer;
+          border-radius: 2px;
+          transition: 250ms;
+
+          &:hover {
+            background-color: #000;
+          }
+        }
+      }
+    }
+
+    @media (max-width: 1024px) {
+      .left {
+        gap: 60px;
+      }
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .card {
+      flex-direction: column;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .card {
+      flex-direction: column;
+      border-radius: 0;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .register {
+    height: min-content;
+  }
+}
+
+@media (max-width: 480px) {
+  .register {
+    padding: 0;
+    height: min-content;
+  }
+}
