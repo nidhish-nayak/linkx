@@ -140,10 +140,24 @@
       flex-direction: column;
     }
   }
+
+  @media (max-width: 480px) {
+    .card {
+      flex-direction: column;
+      border-radius: 0;
+    }
+  }
 }
 
 @media (max-width: 1024px) {
   .login {
+    height: min-content;
+  }
+}
+
+@media (max-width: 480px) {
+  .login {
+    padding: 0;
     height: min-content;
   }
 }
