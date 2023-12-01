@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./login.scss";
 
 const Login = () => {
@@ -17,7 +18,12 @@ const Login = () => {
 					</div>
 					<div className="left-register">
 						<span>Don't have an account ?</span>
-						<button>Register</button>
+						<Link
+							to="/register"
+							style={{ textDecoration: "none", color: "inherit" }}
+						>
+							<button>Register</button>
+						</Link>
 					</div>
 				</div>
 				<div className="right">
