@@ -2,8 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import App from "./App.tsx";
-import ErrorPage from "./error-page.jsx";
 import "./index.css";
+import ErrorPage from "./pages/error/error.jsx";
 import Login from "./pages/login/Login.tsx";
 import Register from "./pages/register/Register.tsx";
 
