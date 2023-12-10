@@ -1,6 +1,5 @@
 .login {
   height: 100vh;
-  background-color: #f5f5f5;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -13,20 +12,22 @@
     overflow: hidden;
 
     .left {
-      flex: 1;
+      width: 50%;
       background: linear-gradient(rgb(25, 25, 25), rgba(0, 0, 0, 0.5)),
         url("https://ik.imagekit.io/fabric01/linkx/friends.webp?updatedAt=1700850423220") center;
       background-size: cover;
-      padding: 50px;
+      padding: 100px;
       display: flex;
       flex-direction: column;
-      justify-content: space-around;
+      justify-content: center;
+      gap: 10em;
       color: white;
 
       .left-heading {
         display: flex;
         flex-direction: column;
         gap: 8px;
+        max-width: 580px;
 
         h1 {
           font-size: 4rem;
@@ -66,8 +67,8 @@
     }
 
     .right {
-      flex: 1;
-      padding: 50px;
+      width: 50%;
+      padding: 100px;
       display: flex;
       flex-direction: column;
       gap: 50px;
@@ -129,20 +130,21 @@
     @media (max-width: 1024px) {
       .left {
         gap: 60px;
+        padding: 50px;
+        width: 100%;
+      }
+
+      .right {
+        padding: 50px;
+        width: 100%;
       }
     }
   }
 
   @media (max-width: 1024px) {
     .card {
+      height: 100%;
       flex-direction: column;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .card {
-      flex-direction: column;
-      border-radius: 0;
     }
   }
 }

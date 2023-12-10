@@ -20,7 +20,11 @@ const Register = () => {
 						<span>Already have an account ?</span>
 						<Link
 							to="/login"
-							style={{ textDecoration: "none", color: "inherit" }}
+							style={{
+								textDecoration: "none",
+								color: "inherit",
+								width: "min-content",
+							}}
 						>
 							<button>Login</button>
 						</Link>
