@@ -11,7 +11,7 @@ The project consists of two folders "client" and "api". Both are responsible for
 Here's an overview of the project's front-end folder structure:
 
 ```
-:open_file_folder: client/
+📂client/
     ├── public/             # Public assets and HTML template
     ├── src/
     │   ├── assets/         # Assets / files used in the application
@@ -34,7 +34,7 @@ Here's an overview of the project's front-end folder structure:
 Here's an overview of the project's back-end folder structure:
 
 ```
-:open_file_folder: api/
+📂api/
     ├── public/             # Public assets and HTML template
     ├── src/
     │   ├── assets/         # Assets / files used in the application
