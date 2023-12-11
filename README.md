@@ -188,5 +188,5 @@ If you have any questions, suggestions, or feedback, please don't hesitate to re
 <br/>
 
 <p align="center">
-  Made with by Nidhish Nayak.
+  <b>Made with 😎 by Nidhish Nayak.</b>
 </p>
