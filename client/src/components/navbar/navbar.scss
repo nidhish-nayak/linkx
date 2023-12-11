@@ -1,9 +1,12 @@
 .navbar {
+    position: sticky;
+    top: 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 10px 20px;
-    height: 50px;
+    height: 70px;
+    background-color: white;
     border-bottom: 1px solid lightgrey;
 
     .left {
@@ -12,14 +15,11 @@
         justify-content: center;
         gap: 30px;
 
-        img {
-            width: 35px;
-        }
-
         span {
             font-size: 20px;
             font-weight: bold;
             color: black;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
         }
 
         .search {
@@ -27,6 +27,7 @@
             align-items: center;
             gap: 10px;
             border: 1px solid lightgray;
+            background-color: #f5f5f5;
             border-radius: 5px;
             padding: 5px;
 
@@ -34,6 +35,7 @@
                 border: none;
                 width: 500px;
                 padding: 2px;
+                background-color: inherit;
 
                 &:focus-visible {
                     outline: none;
@@ -45,7 +47,7 @@
     .right {
         display: flex;
         align-items: center;
-        gap: 30px;
+        gap: 20px;
 
         .user {
             display: flex;

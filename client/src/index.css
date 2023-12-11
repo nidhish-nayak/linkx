@@ -16,3 +16,16 @@ body {
 	padding: 0;
 	box-sizing: border-box;
 }
+
+body::-webkit-scrollbar {
+	width: 10px;
+	background-color: #ececec;
+}
+
+body::-webkit-scrollbar-thumb {
+	background-color: darkgray;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+	background-color: rgb(112, 112, 112);
+}

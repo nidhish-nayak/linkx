@@ -1,0 +1,111 @@
+.rightbar {
+    flex: 3;
+    position: sticky;
+    top: 70px;
+    height: calc(100vh - 70px);
+    overflow-y: auto;
+
+    &::-webkit-scrollbar {
+        display: none
+    }
+
+    .container {
+        padding: 20px;
+
+        .item {
+            -webkit-box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.09);
+            -moz-box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.09);
+            box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.09);
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+
+            span {
+                color: gray;
+            }
+
+            .user {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin: 20px 0px;
+
+                .userInfo {
+                    display: flex;
+                    align-items: center;
+                    gap: 20px;
+                    position: relative;
+
+                    img {
+                        min-width: 40px;
+                        height: 40px;
+                        border-radius: 50%;
+                        object-fit: cover;
+                    }
+
+                    .online {
+                        width: 14px;
+                        height: 14px;
+                        border-radius: 50%;
+                        background-color: limegreen;
+                        border: 2px solid white;
+                        position: absolute;
+                        top: 0;
+                        left: 30px;
+                    }
+
+                    p {
+                        font-size: 0.9rem;
+                        display: flex;
+                        flex-direction: column;
+                    }
+
+                    span {
+                        font-weight: 500;
+                    }
+                }
+
+                .user-time {
+                    font-size: 0.9rem;
+                    overflow-x: auto;
+                    min-width: 70px;
+
+                    &::-webkit-scrollbar {
+                        background-color: white;
+                        height: 5px;
+                    }
+
+                    &::-webkit-scrollbar-track {
+                        background-color: white;
+                    }
+
+                    &::-webkit-scrollbar-thumb {
+                        background-color: #cecece;
+                    }
+                }
+
+                .buttons {
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+
+                    button {
+                        border: none;
+                        padding: 5px 10px;
+                        color: white;
+                        cursor: pointer;
+                        border-radius: 2px;
+
+                        &:first-child {
+                            background-color: #5271ff;
+                        }
+
+                        &:last-child {
+                            background-color: #f0544f;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

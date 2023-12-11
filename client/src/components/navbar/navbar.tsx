@@ -17,14 +17,9 @@ const Navbar = () => {
 					to="/"
 					style={{
 						textDecoration: "none",
-						display: "flex",
-						alignItems: "center",
-						justifyContent: "center",
-						gap: "5px",
 					}}
 				>
-					<img src="/logo.svg" alt="logo" />
-					<span>LinkX</span>
+					<span>LinkX.</span>
 				</Link>
 				<HomeOutlinedIcon />
 				{/* <LightModeOutlinedIcon /> */}
@@ -40,7 +35,10 @@ const Navbar = () => {
 				<EmailOutlinedIcon />
 				<NotificationsOutlinedIcon />
 				<div className="user">
-					<img src="/default-user.png" alt="logo" />
+					<img
+						src="https://images.pexels.com/photos/4881619/pexels-photo-4881619.jpeg?auto=compress&cs=tinysrgb&w=1600"
+						alt="logo"
+					/>
 					<span>John Doe</span>
 				</div>
 			</div>
