@@ -15,7 +15,7 @@ import Register from "./pages/register/register.tsx";
 
 import "./index.css";
 
-const currentUser = false;
+const currentUser = true;
 
 export const ProtectedRoute = ({ children }: { children: ReactNode }) => {
 	if (!currentUser) {
