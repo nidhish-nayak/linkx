@@ -1,7 +1,7 @@
 # LinkX - Social Media App
 
 > **Warning**
-> This app is in progress. I am building this in public. You can follow the process on Github.
+> This app is a work in progress. I am building this in public. You can follow the process on Github.
 
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/Nidhish-D-Nayak/linkx/tree/main)
 
@@ -13,7 +13,7 @@ LinkX is a full-stack MERN app featuring social media functionalities such as po
   
   <img alt="GitHub Language Count" src="https://img.shields.io/github/languages/count/nidhish-nayak/linkx" />
   <img alt="GitHub Top Language" src="https://img.shields.io/github/languages/top/nidhish-nayak/linkx" />
-  <img alt="" src="https://img.shields.io/github/repo-size/nidhish-nayak/linkx" />
+  <img alt="Repo Size" src="https://img.shields.io/github/repo-size/nidhish-nayak/linkx" />
   <img alt="GitHub Issues" src="https://img.shields.io/github/issues/nidhish-nayak/linkx" />
   <img alt="GitHub Closed Issues" src="https://img.shields.io/github/issues-closed/nidhish-nayak/linkx" />
   <img alt="GitHub Pull Requests" src="https://img.shields.io/github/issues-pr/nidhish-nayak/linkx" />
@@ -26,7 +26,7 @@ LinkX is a full-stack MERN app featuring social media functionalities such as po
 
 ## How to navigate the Project ?
 
-The project consists of two folders "client" and "api". Both are responsible for handling frontend and backend features respectively. Below are the details on how the client and server folders are structured to better understand the architecture of the application.
+The project consists of two folders `client` and `api`. Both are responsible for handling frontend and backend features respectively. Below are the details on how the client and server folders are structured to better understand the architecture of the application.
 
 ### Frontend folder structure:
 
@@ -132,7 +132,7 @@ To run the server locally, follow these steps:
 
 3. Start the development server for backend:
 
-    ```bash
+    ```console
     pnpm start
     ```
 
