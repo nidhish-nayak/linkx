@@ -185,4 +185,7 @@ This project is licensed under the [MIT License](LICENSE). Feel free to use, mod
 
 If you have any questions, suggestions, or feedback, please don't hesitate to reach out. You can contact the project maintainer at [nidhibelthangady@gmail.com](mailto:nidhibelthangady@gmail.com).
 
-<center>Made with by Nidhish</center>
+<br/>
+<br/>
+
+<p style="text-align: center;">Made with by Nidhish</p>
