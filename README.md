@@ -132,7 +132,7 @@ To run the server locally, follow these steps:
 
 3. Start the development server for backend:
 
-    ```console
+    ```bash
     pnpm start
     ```
 
@@ -147,14 +147,14 @@ Server side commands will be updated as we implement the apis in future...
 
 ### Frontend technologies:
 
--   Vite: Latest version of Vite is used for react frontend.
--   Typescript: TypeScript checks a program for errors before execution, ensures better developer experience.
--   React: JavaScript library for building user interfaces.
--   Redux: State management tool for predictable state updates.
--   Redux Toolkit: A more opinionated state management tool for better developer experience.
--   Axios: Promise-based HTTP client for making API requests.
--   SCSS: Sass is a preprocessor scripting language that is interpreted or compiled into Cascading Style Sheets.
--   React Router: react-router-dom V6 is used for the application routing.
+-   **Vite**: Latest version of Vite is used for react frontend.
+-   **Typescript**: TypeScript checks a program for errors before execution, ensures better developer experience.
+-   **React**: JavaScript library for building user interfaces.
+-   **Redux**: State management tool for predictable state updates.
+-   **Redux Toolkit**: A more opinionated state management tool for better developer experience.
+-   **Axios**: Promise-based HTTP client for making API requests.
+-   **SCSS**: Sass is a preprocessor scripting language that is interpreted or compiled into Cascading Style Sheets.
+-   **React Router**: react-router-dom V6 is used for the application routing.
 -   ...Upcoming updates
 
 ### Backend technologies:
@@ -163,7 +163,7 @@ Server side commands will be updated as we implement the apis in future...
 
 ## Contributing 🤝
 
-We welcome contributions to the Linkx - social media project! If you would like to contribute, please follow these steps:
+We welcome open-source contributions to **Linkx - social media project** ! If you would like to contribute, please follow the below steps:
 
 1. Fork the repository.
 2. Create a new branch for your feature/fix: `git checkout -b feature-name`.
@@ -184,3 +184,5 @@ This project is licensed under the [MIT License](LICENSE). Feel free to use, mod
 ## Contact 💬
 
 If you have any questions, suggestions, or feedback, please don't hesitate to reach out. You can contact the project maintainer at [nidhibelthangady@gmail.com](mailto:nidhibelthangady@gmail.com).
+
+<center>Made with by Nidhish</center>
