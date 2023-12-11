@@ -1,6 +1,10 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import ReactDOM from "react-dom/client";
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import {
+	Navigate,
+	RouterProvider,
+	createBrowserRouter,
+} from "react-router-dom";
 
 import App from "./App.tsx";
 import ErrorPage from "./pages/error/error.jsx";
@@ -11,10 +15,23 @@ import Register from "./pages/register/register.tsx";
 
 import "./index.css";
 
+const currentUser = false;
+
+export const ProtectedRoute = ({ children }: { children: ReactNode }) => {
+	if (!currentUser) {
+		return <Navigate to="/login" />;
+	}
+	return children;
+};
+
 const router = createBrowserRouter([
 	{
 		path: "/",
-		element: <App />,
+		element: (
+			<ProtectedRoute>
+				<App />
+			</ProtectedRoute>
+		),
 		errorElement: <ErrorPage />,
 		children: [
 			{
