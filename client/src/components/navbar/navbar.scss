@@ -9,8 +9,9 @@
         justify-content: space-between;
         padding: 10px 20px;
         height: 70px;
-        background-color: white;
         border-bottom: 1px solid lightgrey;
+        background-color: themed("bg");
+        color: themed("textColor");
 
         .left {
             display: flex;
