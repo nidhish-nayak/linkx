@@ -6,7 +6,7 @@ import "./style.scss";
 
 const App = () => {
     return (
-        <div className="theme-dark">
+        <div className="theme-light">
             <Navbar />
             <div style={{ display: "flex" }}>
                 <Leftbar />
