@@ -1,31 +1,31 @@
 .error-page {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  gap: 2em;
-
-  h1 {
-    font-size: 4rem;
-  }
-
-  div {
-    background-color: #ececec;
-    padding: 2em;
-    border-radius: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     gap: 2em;
 
-    p {
-      font-size: 1.25rem;
-
-      i {
-        color: crimson;
-        font-weight: bold;
-      }
+    h1 {
+        font-size: 4rem;
     }
-  }
+
+    div {
+        background-color: #ececec;
+        padding: 2em;
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 2em;
+
+        p {
+            font-size: 1.25rem;
+
+            i {
+                color: crimson;
+                font-weight: bold;
+            }
+        }
+    }
 }

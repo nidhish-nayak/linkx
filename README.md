@@ -3,7 +3,7 @@
 > **Warning**
 > This app is a work in progress. I am building this in public. You can follow the process on Github.
 
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/Nidhish-D-Nayak/linkx/tree/main)
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/nidhish-nayak/linkx/tree/main)
 
 ## About the Project
 

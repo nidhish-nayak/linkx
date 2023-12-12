@@ -1,4 +1,4 @@
-@import '../../style.scss';
+@import "../../style.scss";
 
 .navbar {
     @include themify($themes) {
@@ -23,7 +23,8 @@
                 font-size: 20px;
                 font-weight: bold;
                 color: black;
-                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                font-family: "Gill Sans", "Gill Sans MT", Calibri,
+                    "Trebuchet MS", sans-serif;
             }
 
             .search {

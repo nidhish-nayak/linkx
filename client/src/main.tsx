@@ -1,9 +1,9 @@
 import React, { ReactNode } from "react";
 import ReactDOM from "react-dom/client";
 import {
-	Navigate,
-	RouterProvider,
-	createBrowserRouter,
+    Navigate,
+    RouterProvider,
+    createBrowserRouter,
 } from "react-router-dom";
 
 import App from "./App.tsx";
@@ -17,44 +17,44 @@ import Register from "./pages/register/register.tsx";
 const currentUser = true;
 
 export const ProtectedRoute = ({ children }: { children: ReactNode }) => {
-	if (!currentUser) {
-		return <Navigate to="/login" />;
-	}
-	return children;
+    if (!currentUser) {
+        return <Navigate to="/login" />;
+    }
+    return children;
 };
 
 const router = createBrowserRouter([
-	{
-		path: "/",
-		element: (
-			<ProtectedRoute>
-				<App />
-			</ProtectedRoute>
-		),
-		errorElement: <ErrorPage />,
-		children: [
-			{
-				path: "/",
-				element: <Home />,
-			},
-			{
-				path: "/profile/:id",
-				element: <Profile />,
-			},
-		],
-	},
-	{
-		path: "/login",
-		element: <Login />,
-	},
-	{
-		path: "/register",
-		element: <Register />,
-	},
+    {
+        path: "/",
+        element: (
+            <ProtectedRoute>
+                <App />
+            </ProtectedRoute>
+        ),
+        errorElement: <ErrorPage />,
+        children: [
+            {
+                path: "/",
+                element: <Home />,
+            },
+            {
+                path: "/profile/:id",
+                element: <Profile />,
+            },
+        ],
+    },
+    {
+        path: "/login",
+        element: <Login />,
+    },
+    {
+        path: "/register",
+        element: <Register />,
+    },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
-	<React.StrictMode>
-		<RouterProvider router={router} />
-	</React.StrictMode>
+    <React.StrictMode>
+        <RouterProvider router={router} />
+    </React.StrictMode>
 );

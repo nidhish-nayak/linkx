@@ -5,18 +5,18 @@ import Rightbar from "./components/rightbar/rightbar";
 import "./style.scss";
 
 const App = () => {
-	return (
-		<div className="theme-dark">
-			<Navbar />
-			<div style={{ display: "flex" }}>
-				<Leftbar />
-				<div style={{ flex: 6 }}>
-					<Outlet />
-				</div>
-				<Rightbar />
-			</div>
-		</div>
-	);
+    return (
+        <div className="theme-dark">
+            <Navbar />
+            <div style={{ display: "flex" }}>
+                <Leftbar />
+                <div style={{ flex: 6 }}>
+                    <Outlet />
+                </div>
+                <Rightbar />
+            </div>
+        </div>
+    );
 };
 
 export default App;
