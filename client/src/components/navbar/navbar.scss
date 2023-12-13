@@ -8,7 +8,7 @@
         align-items: center;
         justify-content: space-between;
         padding: 10px 20px;
-        height: 70px;
+        height: 60px;
         border-bottom: 1px solid themed("border");
         background-color: themed("bg");
         color: themed("textColor");
@@ -18,6 +18,18 @@
             align-items: center;
             justify-content: center;
             gap: 30px;
+
+            .theme {
+                border-radius: 50%;
+                width: 30px;
+                height: 30px;
+                padding: 3px;
+
+                &:hover {
+                    cursor: pointer;
+                    background-color: themed("bgSoft");
+                }
+            }
 
             span {
                 font-size: 20px;

@@ -5,10 +5,10 @@
         flex: 2;
         position: sticky;
         overflow-y: auto;
-        top: 70px;
+        top: 60px;
         color: themed("textColor");
         background-color: themed("bg");
-        height: calc(100vh - 70px);
+        height: calc(100vh - 60px);
 
         &::-webkit-scrollbar {
             display: none;

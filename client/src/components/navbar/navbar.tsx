@@ -1,15 +1,21 @@
+import { useContext } from "react";
+import { Link } from "react-router-dom";
+
 import AppsOutlinedIcon from "@mui/icons-material/AppsOutlined";
 import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
 import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
-// import LightModeOutlinedIcon from "@mui/icons-material/LightModeOutlined";
+import LightModeOutlinedIcon from "@mui/icons-material/LightModeOutlined";
 import NotificationsOutlinedIcon from "@mui/icons-material/NotificationsOutlined";
 import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
-import { Link } from "react-router-dom";
+
+import { DarkModeContext } from "../../context/darkModeContext";
 import "./navbar.scss";
 
 const Navbar = () => {
+    const { darkMode, toggleTheme } = useContext(DarkModeContext);
+
     return (
         <div className="navbar">
             <div className="left">
@@ -22,8 +28,17 @@ const Navbar = () => {
                     <span>LinkX.</span>
                 </Link>
                 <HomeOutlinedIcon />
-                {/* <LightModeOutlinedIcon /> */}
-                <DarkModeOutlinedIcon />
+                <div
+                    className="theme"
+                    onClick={toggleTheme}
+                    title="Toggle theme"
+                >
+                    {darkMode ? (
+                        <DarkModeOutlinedIcon />
+                    ) : (
+                        <LightModeOutlinedIcon />
+                    )}
+                </div>
                 <AppsOutlinedIcon />
                 <div className="search">
                     <SearchOutlinedIcon />

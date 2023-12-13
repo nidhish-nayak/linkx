@@ -4,8 +4,8 @@
     @include themify($themes) {
         flex: 3;
         position: sticky;
-        top: 70px;
-        height: calc(100vh - 70px);
+        top: 60px;
+        height: calc(100vh - 60px);
         overflow-y: auto;
         background-color: themed("bg");
         color: themed("textColor");
@@ -54,7 +54,7 @@
                             height: 14px;
                             border-radius: 50%;
                             background-color: limegreen;
-                            border: 2px solid themed("bg");
+                            border: 2px solid themed("bgSoft");
                             position: absolute;
                             top: 0;
                             left: 30px;

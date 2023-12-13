@@ -7,12 +7,14 @@ import {
 } from "react-router-dom";
 
 import App from "./App.tsx";
-import "./main.scss";
 import ErrorPage from "./pages/error/error.jsx";
 import Home from "./pages/home/home.tsx";
 import Login from "./pages/login/login.tsx";
 import Profile from "./pages/profile/profile.tsx";
 import Register from "./pages/register/register.tsx";
+
+import { DarkModeProvider } from "./context/darkModeContext.tsx";
+import "./main.scss";
 
 const currentUser = true;
 
@@ -53,8 +55,12 @@ const router = createBrowserRouter([
     },
 ]);
 
-ReactDOM.createRoot(document.getElementById("root")!).render(
+const root = ReactDOM.createRoot(document.getElementById("root")!);
+
+root.render(
     <React.StrictMode>
-        <RouterProvider router={router} />
+        <DarkModeProvider>
+            <RouterProvider router={router} />
+        </DarkModeProvider>
     </React.StrictMode>
 );
