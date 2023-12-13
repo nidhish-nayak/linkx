@@ -7,7 +7,7 @@ import {
 } from "react-router-dom";
 
 import App from "./App.tsx";
-import "./main.css";
+import "./main.scss";
 import ErrorPage from "./pages/error/error.jsx";
 import Home from "./pages/home/home.tsx";
 import Login from "./pages/login/login.tsx";

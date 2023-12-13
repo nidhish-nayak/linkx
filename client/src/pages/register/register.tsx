@@ -10,11 +10,9 @@ const Register = () => {
                         <h1>LinkX.</h1>
                         <p>
                             Welcome to our vibrant social media community, where
-                            meaningful connections thrive! Immerse yourself in a
+                            meaningful connections thrive. Immerse yourself in a
                             world of shared experiences, as our platform
                             seamlessly brings together like minded individuals.
-                            Join us on a journey of authentic expression and
-                            community engagement.
                         </p>
                     </div>
                     <div className="left-register">

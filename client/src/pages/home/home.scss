@@ -1,4 +1,9 @@
+@import "../../style.scss";
+
 .home {
-    background-color: #f5f5f5;
-    padding: 2em;
+    @include themify($themes) {
+        background-color: themed("bgSoft");
+        color: themed("textColor");
+        padding: 2em;
+    }
 }
