@@ -1,0 +1,10 @@
+@import "../../style.scss";
+
+.profile {
+    @include themify($themes) {
+        background-color: themed("bgSoft");
+        color: themed("textColor");
+        padding: 2em;
+        min-height: calc(100vh - 60px);
+    }
+}

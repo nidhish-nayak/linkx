@@ -34,9 +34,9 @@ const Navbar = () => {
                     title="Toggle theme"
                 >
                     {darkMode ? (
-                        <DarkModeOutlinedIcon />
-                    ) : (
                         <LightModeOutlinedIcon />
+                    ) : (
+                        <DarkModeOutlinedIcon />
                     )}
                 </div>
                 <AppsOutlinedIcon />
