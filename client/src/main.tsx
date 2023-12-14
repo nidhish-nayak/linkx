@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react";
+import React, { ReactNode, useContext } from "react";
 import ReactDOM from "react-dom/client";
 import {
     Navigate,
@@ -13,12 +13,13 @@ import Login from "./pages/login/login.tsx";
 import Profile from "./pages/profile/profile.tsx";
 import Register from "./pages/register/register.tsx";
 
+import { AuthContext, AuthProvider } from "./context/authContext.tsx";
 import { DarkModeProvider } from "./context/darkModeContext.tsx";
 import "./main.scss";
 
-const currentUser = true;
-
 export const ProtectedRoute = ({ children }: { children: ReactNode }) => {
+    const { currentUser } = useContext(AuthContext);
+
     if (!currentUser) {
         return <Navigate to="/login" />;
     }
@@ -60,7 +61,9 @@ const root = ReactDOM.createRoot(document.getElementById("root")!);
 root.render(
     <React.StrictMode>
         <DarkModeProvider>
-            <RouterProvider router={router} />
+            <AuthProvider>
+                <RouterProvider router={router} />
+            </AuthProvider>
         </DarkModeProvider>
     </React.StrictMode>
 );

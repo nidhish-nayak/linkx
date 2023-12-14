@@ -1,19 +1,20 @@
 import { ReactNode, createContext, useEffect, useState } from "react";
 
 export type AuthContextTypes = {
-    currentUser: string;
+    currentUser: string | null;
     login: () => void;
 };
 
 export const AuthContext = createContext<AuthContextTypes>({
-    currentUser: "",
+    currentUser: null,
     login: () => {},
 });
 
 export const AuthProvider = ({ children }: { children: ReactNode }) => {
     const [currentUser, setCurrentUser] = useState(() => {
         const storedUser = localStorage.getItem("user");
-        return storedUser ? JSON.parse(storedUser) : null;
+        // returning null if no storedUser
+        return JSON.parse(storedUser!);
     });
 
     useEffect(() => {
@@ -23,7 +24,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
 
     const login = () => {
         //TO DO
-        setCurrentUser("");
+        setCurrentUser(null);
     };
 
     const value = { currentUser, login };

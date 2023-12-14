@@ -18,7 +18,6 @@ export const DarkModeProvider = ({ children }: { children: ReactNode }) => {
 
     useEffect(() => {
         localStorage.setItem("darkMode", darkMode);
-        console.log(localStorage);
     }, [darkMode]);
 
     const toggleTheme = () => {
