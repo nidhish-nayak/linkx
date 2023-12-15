@@ -85,7 +85,7 @@ Follow the steps below to setup the project locally:
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/Nidhish-D-Nayak/linkx.git
+    git clone https://github.com/nidhish-nayak/linkx.git
     ```
 
 2. Navigate to the project directory:
