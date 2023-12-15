@@ -76,7 +76,11 @@ Here's an overview of the project's backend folder structure:
 
 ## Installation 💻
 
-Follow the steps below to run the project locally:
+To make the whole application run locally on your computer, you have to run both `client` and `api` separately in the terminal simultaneously.
+
+### Project setup:
+
+Follow the steps below to setup the project locally:
 
 1. Clone the repository:
 
@@ -89,10 +93,13 @@ Follow the steps below to run the project locally:
     ```bash
     cd linkx
     ```
+    
+> You can use `npm / yarn / pnpm`. Just replace `pnpm` with `npm` or `yarn` for all the commands.
 
-### Frontend:
+### Frontend setup:
 
-To run the client locally, follow these steps:
+To run the client locally, follow the below steps:
+
 
 1. Navigate to the client directory:
 
@@ -114,9 +121,9 @@ To run the client locally, follow these steps:
 
 4. Open your browser and visit `http://localhost:5173/` to access the frontend of LinkX application.
 
-### Backend:
+### Backend setup:
 
-To run the server locally, follow these steps:
+Setting up the server is similar to frontend setup given above. Follow the below steps:
 
 1. Navigate to the api directory:
 
