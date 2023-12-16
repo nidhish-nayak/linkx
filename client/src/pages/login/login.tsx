@@ -1,7 +1,17 @@
-import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { AuthContext } from "../../context/authContext";
 import "./login.scss";
 
 const Login = () => {
+    const navigate = useNavigate();
+    const { login } = useContext(AuthContext);
+    const handleLoginSubmit = () => {
+        // Run the login func from the AuthContext
+        login();
+        navigate("/");
+    };
+
     return (
         <div className="login">
             <div className="card">
@@ -34,10 +44,10 @@ const Login = () => {
                         <h2>Already have an account ?</h2>
                         <p>Sign in with your email and password</p>
                     </div>
-                    <form action="">
+                    <form action="" onSubmit={handleLoginSubmit}>
                         <input type="text" placeholder="Username" />
                         <input type="password" placeholder="Password" />
-                        <button>Login</button>
+                        <button type="submit">Login</button>
                     </form>
                 </div>
             </div>

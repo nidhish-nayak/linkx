@@ -1,7 +1,7 @@
 import { ReactNode, createContext, useEffect, useState } from "react";
 
 export type AuthContextTypes = {
-    currentUser: string | null;
+    currentUser: { id: number; name: string; profilePic: string } | null;
     login: () => void;
 };
 
@@ -19,12 +19,14 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
 
     useEffect(() => {
         localStorage.setItem("user", JSON.stringify(currentUser));
-        console.log(localStorage);
     }, [currentUser]);
 
     const login = () => {
-        //TO DO
-        setCurrentUser(null);
+        setCurrentUser({
+            id: 1,
+            name: "Nidhish Nayak",
+            profilePic: "https://avatars.githubusercontent.com/u/76598208?v=4",
+        });
     };
 
     const value = { currentUser, login };
