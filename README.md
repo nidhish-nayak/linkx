@@ -7,7 +7,7 @@
 
 ## About the Project
 
-LinkX is a full-stack MERN app featuring social media functionalities such as posts, likes, uploads, etc. This project is built using JWT Auth, ReactJS, NodeJS, ExpressJS, Redux Toolkit, RTK Query, MongoDB, Material UI.
+LinkX is a full-stack MERN app featuring social media functionalities such as posts, likes, uploads, etc. This project is built using JWT Auth, ReactJS, NodeJS, ExpressJS, Redux Toolkit, RTK Query, MongoDB, Material UI. We will be implementing the features with simplicity as much as possible so that anyone can understand the process.
 
 <p align="left">
   
@@ -38,6 +38,11 @@ Here's an overview of the project's frontend folder structure:
     ├── src/
     │   ├── assets/         # Assets / files used in the application
     │   ├── components/     # Reusable React components
+    │   ├── context/        # React context apis
+    |   |   |
+    |   │   ├── darkModeContext.tsx   # Handles toggle for dark mode
+    |   │   └── authContext.tsx       # Handles authentication
+    |   |
     │   ├── pages/          # Top-level application pages
     |   ├── types/          # Custom and global types defined
     │   ├── utils/          # Utility functions and constants
