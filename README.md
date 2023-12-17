@@ -7,7 +7,7 @@
 
 ## About the Project
 
-LinkX is a full-stack application featuring social media functionalities such as posts, likes, uploads, etc. This project is built using JWT Auth, ReactJS, NodeJS, ExpressJS, MySQL, Material UI. We will be implementing the features with simplicity as much as possible so that anyone can understand the process.
+LinkX is a full-stack application featuring social media functionalities such as posts, likes, uploads, etc. This project is built using JWT Auth, ReactJS, NodeJS, ExpressJS, MySQL, React Query (Tanstack Query) and Material UI. We will be implementing the features with simplicity as much as possible so that anyone can understand the process.
 
 <p align="left">
   
