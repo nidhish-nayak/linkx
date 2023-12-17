@@ -1,0 +1,91 @@
+@import "../../style.scss";
+
+.stories {
+    @include themify($themes) {
+        display: flex;
+        gap: 20px;
+        height: 100%;
+        padding: 10px;
+        align-items: center;
+        justify-content: center;
+        overflow-x: auto;
+
+        &::-webkit-scrollbar {
+            height: 4px;
+            background-color: themed("bgSoft");
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background-color: themed("bg");
+        }
+
+        @include mobile {
+            height: 50px;
+            margin-bottom: 0;
+            justify-content: space-between;
+        }
+
+        @include tablet {
+            height: 150px;
+            gap: 20px;
+        }
+
+        .story {
+            flex: none;
+            position: relative;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+
+            @include mobile {
+                flex: none;
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+            }
+
+            .module-border-wrap {
+                padding: 2px;
+                position: relative;
+                width: 104px;
+                height: 104px;
+                border-radius: 50%;
+                background: linear-gradient(to right, purple, crimson);
+
+                img {
+                    width: 100px;
+                    height: 100px;
+                    object-fit: cover;
+                    border-radius: 50%;
+                    border: 2px solid themed("bgSoft");
+                }
+            }
+
+            button {
+                position: absolute;
+                padding: 2px;
+                border: 2px solid themed("bgSoft");
+                color: white;
+                bottom: 0px;
+                left: 0px;
+                background-color: #ff52b7;
+                border-radius: 50%;
+                width: 30px;
+                height: 30px;
+                cursor: pointer;
+                font-size: 30px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                @include mobile {
+                    left: 0;
+                    right: 0;
+                    top: 0;
+                    bottom: 0;
+                    margin: auto;
+                }
+            }
+        }
+    }
+}
