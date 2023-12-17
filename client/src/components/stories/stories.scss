@@ -5,19 +5,12 @@
         display: flex;
         gap: 20px;
         height: 100%;
+        max-width: 700px;
         padding: 10px;
+        margin-top: -10px;
+        margin-bottom: 32px;
         align-items: center;
-        justify-content: center;
-        overflow-x: auto;
-
-        &::-webkit-scrollbar {
-            height: 4px;
-            background-color: themed("bgSoft");
-        }
-
-        &::-webkit-scrollbar-thumb {
-            background-color: themed("bg");
-        }
+        justify-content: flex-start;
 
         @include mobile {
             height: 50px;
@@ -32,7 +25,6 @@
 
         .story {
             flex: none;
-            position: relative;
             width: 100px;
             height: 100px;
             border-radius: 50%;
@@ -46,9 +38,10 @@
 
             .module-border-wrap {
                 padding: 2px;
-                position: relative;
                 width: 104px;
                 height: 104px;
+                position: relative;
+                z-index: 0;
                 border-radius: 50%;
                 background: linear-gradient(to right, purple, crimson);
 
@@ -59,31 +52,35 @@
                     border-radius: 50%;
                     border: 2px solid themed("bgSoft");
                 }
-            }
 
-            button {
-                position: absolute;
-                padding: 2px;
-                border: 2px solid themed("bgSoft");
-                color: white;
-                bottom: 0px;
-                left: 0px;
-                background-color: #ff52b7;
-                border-radius: 50%;
-                width: 30px;
-                height: 30px;
-                cursor: pointer;
-                font-size: 30px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
+                button {
+                    position: absolute;
+                    padding: 2px;
+                    border: 2px solid themed("bgSoft");
+                    color: white;
+                    bottom: 0px;
+                    left: 0px;
+                    background-color: #dd469e;
+                    border-radius: 50%;
+                    width: 30px;
+                    height: 30px;
+                    cursor: pointer;
+                    font-size: 30px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
 
-                @include mobile {
-                    left: 0;
-                    right: 0;
-                    top: 0;
-                    bottom: 0;
-                    margin: auto;
+                    &:hover {
+                        background-color: #a352ff;
+                    }
+
+                    @include mobile {
+                        left: 0;
+                        right: 0;
+                        top: 0;
+                        bottom: 0;
+                        margin: auto;
+                    }
                 }
             }
         }
