@@ -20,6 +20,19 @@
             justify-content: center;
             gap: 30px;
 
+            .home-link {
+                border-radius: 50%;
+                width: 30px;
+                height: 30px;
+                padding: 3px;
+                color: themed("logo");
+
+                &:hover {
+                    cursor: pointer;
+                    background-color: themed("bgSoft");
+                }
+            }
+
             .theme {
                 border-radius: 50%;
                 width: 30px;

@@ -3,8 +3,148 @@
 .profile {
     @include themify($themes) {
         background-color: themed("bgSoft");
-        color: themed("textColor");
         padding: 2em;
-        min-height: calc(100vh - 60px);
+
+        .user-container {
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+            border-radius: 20px;
+            background-color: themed("bg");
+            color: themed("textColor");
+            margin-bottom: 20px;
+
+            .images {
+                width: 100%;
+                height: 200px;
+                border-radius: 10px;
+                display: flex;
+                flex-direction: column;
+                background-color: themed("bg");
+                position: relative;
+
+                .cover {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    border-top-right-radius: 10px;
+                    border-top-left-radius: 10px;
+                    padding: 1px;
+                }
+
+                .profilePic {
+                    position: absolute;
+                    width: 150px;
+                    height: 150px;
+                    border-radius: 50%;
+                    object-fit: cover;
+                    left: 20px;
+                    top: 50%;
+                    margin: auto;
+                    border: 4px solid themed("bg");
+                }
+            }
+
+            .details {
+                margin-top: 30px;
+                display: flex;
+                justify-content: space-between;
+                padding: 30px;
+
+                .left {
+                    flex: 1;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: flex-start;
+                    align-items: flex-start;
+                    gap: 10px;
+
+                    .name {
+                        font-size: 1.5rem;
+                        font-weight: 500;
+                    }
+
+                    .item {
+                        display: flex;
+                        align-items: center;
+                        margin-top: 5px;
+                        margin-bottom: 5px;
+
+                        span {
+                            margin-left: 5px;
+                        }
+                    }
+
+                    .follow-button {
+                        margin-top: 20px;
+                        font-size: 0.9rem;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        gap: 4px;
+                        border: none;
+                        background-color: themed("button");
+                        color: white;
+                        padding: 6px 12px;
+                        border-radius: 1.6rem;
+                        cursor: pointer;
+
+                        &:hover {
+                            background-color: themed("buttonSoft");
+                        }
+                    }
+                }
+
+                .right {
+                    flex: 1;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-end;
+                    justify-content: space-around;
+                    gap: 10px;
+
+                    .more {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        gap: 10px;
+                    }
+
+                    .social-links {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        gap: 10px;
+
+                        a {
+                            color: themed("textColorSoft");
+                        }
+                    }
+
+                    span {
+                        font-size: 30px;
+                        font-weight: 500;
+                    }
+
+                    .info {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-around;
+                        gap: 20px;
+
+                        .item {
+                            display: flex;
+                            align-items: center;
+                            gap: 5px;
+                            color: themed("textColorSoft");
+
+                            span {
+                                font-size: 12px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }

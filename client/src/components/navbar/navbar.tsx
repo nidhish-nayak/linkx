@@ -29,7 +29,9 @@ const Navbar = () => {
                 >
                     <span>LinkX.</span>
                 </Link>
-                <HomeOutlinedIcon />
+                <Link to="/" className="home-link" title="Home">
+                    <HomeOutlinedIcon />
+                </Link>
                 <div
                     className="theme"
                     onClick={toggleTheme}

@@ -19,6 +19,7 @@
             background-color: themed("bg");
 
             .item {
+                border: 1px solid themed("border");
                 background-color: themed("bgSoft");
                 padding: 20px;
                 margin-bottom: 20px;
@@ -101,11 +102,17 @@
                             border-radius: 2px;
 
                             &:first-child {
-                                background-color: #5271ff;
+                                background-color: themed("buttonBlue");
+                                &:hover {
+                                    background-color: themed("buttonBlueSoft");
+                                }
                             }
 
                             &:last-child {
-                                background-color: #f0544f;
+                                background-color: themed("buttonRed");
+                                &:hover {
+                                    background-color: themed("buttonRedSoft");
+                                }
                             }
                         }
                     }
