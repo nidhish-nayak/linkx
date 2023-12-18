@@ -35,7 +35,7 @@ const Comments = () => {
                 <div className="comment">
                     <img src={comment.profilePicture} alt="" />
                     <div className="info">
-                        <span>{comment.name}</span>
+                        <div>{comment.name}</div>
                         <p>{comment.desc}</p>
                     </div>
                     <span className="date">1 hour ago</span>
