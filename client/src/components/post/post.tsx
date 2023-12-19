@@ -46,11 +46,14 @@ const Post = ({ post }: POST_TYPES) => {
                             <span className="date">1 min ago</span>
                         </div>
                     </div>
-                    <MoreHorizIcon />
+                    <MoreHorizIcon className="more-icon" />
                 </div>
                 <div className="content">
-                    <p>{post.desc}</p>
-                    <img src={post.img} alt="" />
+                    {post.img ? (
+                        <img src={post.img} alt="post-image" />
+                    ) : (
+                        <p>{post.desc}</p>
+                    )}
                 </div>
                 <div className="info">
                     <div className="item">
@@ -59,21 +62,39 @@ const Post = ({ post }: POST_TYPES) => {
                         ) : (
                             <FavoriteBorderOutlinedIcon />
                         )}
-                        12 Likes
                     </div>
                     <div
                         className="item"
                         onClick={() => setCommentOpen(!commentOpen)}
                     >
                         <TextsmsOutlinedIcon />
-                        12 Comments
                     </div>
                     <div className="item">
                         <ShareOutlinedIcon />
-                        Share
                     </div>
                 </div>
+                <span className="mobile-likes">12 Likes</span>
+                {post.img ? (
+                    <p>
+                        <span>{post.name}</span>
+                        {post.desc}
+                    </p>
+                ) : (
+                    <></>
+                )}
+
                 {commentOpen && <Comments />}
+                <div
+                    className="comment-stamp"
+                    onClick={() => setCommentOpen(!commentOpen)}
+                >
+                    {commentOpen ? "" : "View all 12 comments"}
+                </div>
+                <div className="time-stamp">
+                    <span className="stamps">1 min ago</span>
+                    <span className="dot" />
+                    <span className="stamps">Suggested for you</span>
+                </div>
             </div>
         </div>
     );

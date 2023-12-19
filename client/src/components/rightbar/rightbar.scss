@@ -2,15 +2,19 @@
 
 .rightbar {
     @include themify($themes) {
-        flex: 3;
         position: sticky;
         top: 60px;
         height: calc(100vh - 60px);
         overflow-y: auto;
         background-color: themed("bg");
         color: themed("textColor");
+        min-width: 30%;
 
         &::-webkit-scrollbar {
+            display: none;
+        }
+
+        @include tablet {
             display: none;
         }
 

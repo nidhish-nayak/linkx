@@ -2,13 +2,21 @@
 
 .leftbar {
     @include themify($themes) {
-        flex: 2;
         position: sticky;
         overflow-y: auto;
         top: 60px;
         color: themed("textColor");
         background-color: themed("bg");
         height: calc(100vh - 60px);
+        min-width: 20%;
+
+        @include tablet {
+            min-width: 30%;
+        }
+
+        @include mobile {
+            display: none;
+        }
 
         &::-webkit-scrollbar {
             display: none;
