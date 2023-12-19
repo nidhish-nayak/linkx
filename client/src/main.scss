@@ -1,26 +1,5 @@
-@font-face {
-    font-family: "geist";
-    src: url("/fonts/Geist-Regular.woff2") format("woff2");
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: "geist";
-    src: url("/fonts/Geist-SemiBold.woff2") format("woff2");
-    font-weight: 600;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: "geist";
-    src: url("/fonts/Geist-Bold.woff2") format("woff2");
-    font-weight: bold;
-    font-style: normal;
-}
-
 :root {
-    font-family: "geist", sans-serif;
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
     font-synthesis: none;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
