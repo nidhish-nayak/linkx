@@ -38,6 +38,7 @@ Here's an overview of the project's frontend folder structure:
     ├── src/
     │   ├── assets/         # Assets / files used in the application
     │   ├── components/     # Reusable React components
+    │   ├── hooks/          # Reusable custom hooks
     │   ├── context/        # React context apis
     |   |   |
     |   │   ├── darkModeContext.tsx   # Handles toggle for dark mode
@@ -98,13 +99,12 @@ Follow the steps below to setup the project locally:
     ```bash
     cd linkx
     ```
-    
+
 > You can use `npm / yarn / pnpm`. Just replace `pnpm` with `npm` or `yarn` for all the commands.
 
 ### Frontend setup:
 
 To run the client locally, follow the below steps:
-
 
 1. Navigate to the client directory:
 
