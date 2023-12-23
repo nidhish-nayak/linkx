@@ -1,4 +1,4 @@
-import { Fragment, useContext } from "react";
+import { Fragment, useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 import AppsOutlinedIcon from "@mui/icons-material/AppsOutlined";
@@ -12,11 +12,21 @@ import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 
 import { AuthContext } from "../../context/authContext";
 import { DarkModeContext } from "../../context/darkModeContext";
+import useScrollDirection from "../../hooks/useScrollDirection";
 import "./navbar.scss";
 
 const Navbar = () => {
     const { darkMode, toggleTheme } = useContext(DarkModeContext);
     const { currentUser } = useContext(AuthContext);
+    const scrollDirection = useScrollDirection();
+
+    // Define a state to track whether to show or hide the navbar
+    const [isNavbarVisible, setIsNavbarVisible] = useState(true);
+
+    useEffect(() => {
+        // Toggle visibility based on the scroll direction
+        setIsNavbarVisible(scrollDirection === "up");
+    }, [scrollDirection]);
 
     return (
         <Fragment>
@@ -62,7 +72,11 @@ const Navbar = () => {
                     </div>
                 </div>
             </div>
-            <div className="top-mobile">
+            <div
+                className={`top-mobile ${
+                    isNavbarVisible ? "visible" : "hidden"
+                }`}
+            >
                 <div className="left-mobile">
                     <Link
                         to="/"

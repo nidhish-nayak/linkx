@@ -133,6 +133,18 @@
     @include themify($themes) {
         display: none;
 
+        &.visible {
+            opacity: 1;
+            transform: translateY(0);
+            transition: opacity 0.3s, transform 0.3s;
+        }
+
+        &.hidden {
+            opacity: 0;
+            transform: translateY(-100%);
+            transition: opacity 0.3s, transform 0.3s;
+        }
+
         @include mobile {
             display: block;
             position: sticky;
