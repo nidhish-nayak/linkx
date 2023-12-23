@@ -137,7 +137,6 @@
         .comment-stamp {
             cursor: pointer;
             color: themed("arrow");
-            font-weight: lighter;
 
             @include mobile {
                 margin: 0 10px;
