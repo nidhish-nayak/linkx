@@ -32,10 +32,13 @@ const Comments = () => {
                 <button>Send</button>
             </div>
             {comments.map((comment) => (
-                <div className="comment">
+                <div className="comment" key={comment.id}>
                     <img src={comment.profilePicture} alt="" />
                     <div className="info">
-                        <div>{comment.name}</div>
+                        <div>
+                            {comment.name}
+                            <span className="mobile-date">1 hour ago</span>
+                        </div>
                         <p>{comment.desc}</p>
                     </div>
                     <span className="date">1 hour ago</span>

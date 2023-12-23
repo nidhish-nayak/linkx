@@ -85,7 +85,7 @@
 
             .info {
                 display: flex;
-                align-items: center;
+                align-items: flex-start;
                 justify-content: flex-start;
                 gap: 20px;
 
@@ -113,12 +113,12 @@
             }
 
             .mobile-likes {
-                display: none;
+                display: block;
+                margin: 0px;
+                font-weight: 600;
 
                 @include mobile {
-                    display: block;
                     margin: 0 10px;
-                    font-weight: 600;
                 }
             }
 

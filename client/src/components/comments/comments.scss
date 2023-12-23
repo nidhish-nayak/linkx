@@ -2,6 +2,8 @@
 
 .comments {
     @include themify($themes) {
+        margin: 0 10px;
+
         img {
             width: 40px;
             height: 40px;
@@ -42,6 +44,10 @@
             align-items: flex-start;
             gap: 20px;
 
+            @include mobile {
+                gap: 10px;
+            }
+
             .info {
                 flex: 5;
                 display: flex;
@@ -50,10 +56,28 @@
 
                 div {
                     font-weight: 500;
+                    width: 100%;
+
+                    @include mobile {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                    }
+
+                    .mobile-date {
+                        display: none;
+                        font-size: small;
+                        font-weight: lighter;
+                        color: themed("arrow");
+
+                        @include mobile {
+                            display: block;
+                        }
+                    }
                 }
 
                 p {
-                    margin-top: -10px;
+                    margin: -10px 0 0 0;
                     color: themed("textColorSoft");
                 }
             }
@@ -63,6 +87,10 @@
                 align-self: center;
                 color: gray;
                 font-size: 12px;
+
+                @include mobile {
+                    display: none;
+                }
             }
         }
     }

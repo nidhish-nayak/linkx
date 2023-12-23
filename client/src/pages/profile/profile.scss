@@ -5,6 +5,11 @@
         background-color: themed("bgSoft");
         padding: 2em;
 
+        @include mobile {
+            background-color: themed("bg");
+            padding: 0;
+        }
+
         .user-container {
             display: flex;
             justify-content: space-between;
@@ -13,6 +18,11 @@
             background-color: themed("bg");
             color: themed("textColor");
             margin-bottom: 20px;
+
+            @include mobile {
+                border-radius: 0;
+                border-bottom: 1px solid #333;
+            }
 
             .images {
                 width: 100%;
@@ -30,6 +40,10 @@
                     border-top-right-radius: 10px;
                     border-top-left-radius: 10px;
                     padding: 1px;
+
+                    @include mobile {
+                        border-radius: 0;
+                    }
                 }
 
                 .profilePic {
@@ -50,6 +64,13 @@
                 display: flex;
                 justify-content: space-between;
                 padding: 30px;
+
+                @include mobile {
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: flex-end;
+                    gap: 20px;
+                }
 
                 .left {
                     flex: 1;
