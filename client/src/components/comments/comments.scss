@@ -57,39 +57,20 @@
                 div {
                     font-weight: 500;
                     width: 100%;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
 
-                    @include mobile {
-                        display: flex;
-                        justify-content: space-between;
-                        align-items: center;
-                    }
-
-                    .mobile-date {
-                        display: none;
+                    .date {
                         font-size: small;
                         font-weight: lighter;
                         color: themed("arrow");
-
-                        @include mobile {
-                            display: block;
-                        }
                     }
                 }
 
                 p {
                     margin: -10px 0 0 0;
                     color: themed("textColorSoft");
-                }
-            }
-
-            .date {
-                flex: 1;
-                align-self: center;
-                color: gray;
-                font-size: 12px;
-
-                @include mobile {
-                    display: none;
                 }
             }
         }

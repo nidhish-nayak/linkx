@@ -37,11 +37,10 @@ const Comments = () => {
                     <div className="info">
                         <div>
                             {comment.name}
-                            <span className="mobile-date">1 hour ago</span>
+                            <span className="date">1 hour ago</span>
                         </div>
                         <p>{comment.desc}</p>
                     </div>
-                    <span className="date">1 hour ago</span>
                 </div>
             ))}
         </div>

@@ -25,7 +25,7 @@ const Rightbar = () => {
                                 src="https://images.pexels.com/photos/4881619/pexels-photo-4881619.jpeg?auto=compress&cs=tinysrgb&w=1600"
                                 alt="user-image"
                             />
-                            <span>Jane Doe</span>
+                            <span>Nidhishsadd Nayakasdad</span>
                         </div>
                         <div className="buttons">
                             <button>follow</button>
@@ -41,12 +41,16 @@ const Rightbar = () => {
                                 src="https://images.pexels.com/photos/4881619/pexels-photo-4881619.jpeg?auto=compress&cs=tinysrgb&w=1600"
                                 alt="user-image"
                             />
-                            <p>
-                                <span>Jane Doe</span> changed their cover
-                                picture
-                            </p>
+                            <div className="activity-container">
+                                <div>
+                                    <p className="user-name">Keerthanajand</p>
+                                    <p className="user-time">1 min ago</p>
+                                </div>
+                                <p className="user-activity">
+                                    changed their cover picture
+                                </p>
+                            </div>
                         </div>
-                        <span className="user-time">1 min ago</span>
                     </div>
                     <div className="user">
                         <div className="userInfo">
@@ -54,12 +58,16 @@ const Rightbar = () => {
                                 src="https://images.pexels.com/photos/4881619/pexels-photo-4881619.jpeg?auto=compress&cs=tinysrgb&w=1600"
                                 alt="user-image"
                             />
-                            <p>
-                                <span>Jane Doe</span> changed their cover
-                                picture
-                            </p>
+                            <div className="activity-container">
+                                <div>
+                                    <p className="user-name">Jane Doe</p>
+                                    <p className="user-time">1 min ago</p>
+                                </div>
+                                <p className="user-activity">
+                                    changed their cover picture
+                                </p>
+                            </div>
                         </div>
-                        <span className="user-time">1 min ago</span>
                     </div>
                 </div>
                 <div className="item">
