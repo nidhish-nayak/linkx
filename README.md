@@ -53,7 +53,7 @@ Here's an overview of the project's frontend folder structure:
     │   └── main.tsx        # All Routes & protected routes are handled here
     └── index.html          # Root html file
     └── package.json        # Dependencies for the client-side
-    └── tsconfig.json       # All typescript configurations
+    └── tsconfig.json       # Typescript configuration
     └── ...
 ```
 
@@ -63,14 +63,14 @@ Here's an overview of the project's backend folder structure:
 
 ```
 📂api/
-    ├── public/             # Public assets and HTML template
     ├── src/
-    │   ├── assets/         # Assets / files used in the application
-    │   ├── components/     # Reusable backend components
-    └── index.html          # Root html file
-    └── package.json        # Dependencies for the client-side
-    └── tsconfig.json       # All typescript configurations
-    └── ... This is yet to be updated
+    │   ├── middlewares/    # Middleware configs and setup
+    │   └── main.ts         # root file for server
+    │
+    └── .eslintrc.cjs       # eslint config
+    └── package.json        # Dependencies for the server-side
+    └── tsconfig.json       # Typescript configuration
+    └── ...
 ```
 
 ## Features ✨
@@ -136,16 +136,16 @@ Setting up the server is similar to frontend setup given above. Follow the below
     cd api
     ```
 
-2. Install the dependencies using pnpm / npm (make sure you have pnpm installed):
+2. Install the dependencies using npm:
 
     ```bash
-    pnpm install
+    npm install
     ```
 
 3. Start the development server for backend:
 
     ```bash
-    pnpm start
+    npm run dev
     ```
 
 4. Open your browser and visit `http://localhost:3000/` to access the backend of LinkX application.
