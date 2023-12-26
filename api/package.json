@@ -1,0 +1,31 @@
+{
+    "name": "api",
+    "version": "1.0.0",
+    "main": "index.js",
+    "keywords": [],
+    "author": "nidhish-nayak",
+    "license": "ISC",
+    "description": "Handles all the server side features",
+    "scripts": {
+        "dev": "nodemon src/main.ts --ext ts",
+        "prettier": "prettier --write ."
+    },
+    "devDependencies": {
+        "@types/cors": "^2.8.17",
+        "@types/express": "^4.17.21",
+        "@types/node": "^20.10.5",
+        "@typescript-eslint/eslint-plugin": "^6.16.0",
+        "eslint": "^8.56.0",
+        "eslint-plugin-prettier": "^5.1.2",
+        "nodemon": "^3.0.2",
+        "prettier": "^3.1.1",
+        "ts-node": "^10.9.2",
+        "tsconfig-paths": "^4.2.0",
+        "typescript": "^5.3.3"
+    },
+    "dependencies": {
+        "cors": "^2.8.5",
+        "express": "^4.18.2",
+        "zod": "^3.22.4"
+    }
+}
