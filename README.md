@@ -171,7 +171,11 @@ Server side commands will be updated as we implement the apis in future...
 
 ### Backend technologies:
 
--   Yet to be implemented...
+-   **NodeJS**: NodeJS for backend is a pretty popular choice.
+-   **Typescript**: TypeScript checks a program for errors before execution.
+-   **Zod**: Zod for consistent input validation, data structuring, and error handling.
+-   **ExpressJS**: NodeJS framework for backend.
+-   ...Upcoming updates
 
 ## Contributing 🤝
 
