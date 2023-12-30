@@ -8,6 +8,7 @@
     "description": "Handles all the server side features",
     "scripts": {
         "dev": "nodemon src/main.ts --ext ts",
+        "start": "nodemon src/main.ts --ext ts",
         "prettier": "prettier --write ."
     },
     "devDependencies": {
@@ -26,6 +27,7 @@
     "dependencies": {
         "cors": "^2.8.5",
         "express": "^4.18.2",
+        "mysql": "^2.18.1",
         "zod": "^3.22.4"
     }
 }
