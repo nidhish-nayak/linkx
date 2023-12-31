@@ -2,6 +2,8 @@
 
 ## Database schema design
 
+![DB_EER](https://github.com/nidhish-nayak/linkx/assets/76598208/e8e71580-7aaf-4a2d-bb30-b385aecc943a)
+
 ## Server middlewares
 
 ### Backend technologies:
