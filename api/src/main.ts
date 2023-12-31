@@ -1,21 +1,16 @@
-import express, {
-    type Application,
-    type Request,
-    type Response,
-} from "express";
+import express, { type Application } from "express";
 import { zodMiddleware } from "./middlewares/zod.middleware";
+import userRoutes from "./routes/users";
 
 const app: Application = express();
 
 app.use(express.json());
 
-// Routes
-app.get("/", (_req: Request, res: Response) => {
-    res.send("Hello World!");
-});
-
 // Global catches using zod
 app.use(zodMiddleware);
+
+// Routes
+app.use("/api/users", userRoutes);
 
 // Listener
 const PORT = 3000;
