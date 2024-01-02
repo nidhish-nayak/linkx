@@ -7,10 +7,18 @@ const db = mysql.createConnection({
     database: process.env.DB_NAME,
 });
 
-try {
-    db.connect(() => {
-        console.log("Database Connected!");
-    });
-} catch (error) {
-    throw new Error("Database connection failed! - " + error);
-}
+const connectDB = async () => {
+    try {
+        await db.connect();
+        console.log("DB connected!");
+
+        // DB operations here
+    } catch (error) {
+        throw new Error("Database connection failed! - " + error);
+    } finally {
+        db.end();
+        console.log("DB disconnected!");
+    }
+};
+
+export default connectDB;
