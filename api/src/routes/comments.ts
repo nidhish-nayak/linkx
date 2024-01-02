@@ -1,8 +1,10 @@
-import { getUser } from "$/controllers/user";
-import { Router } from "express";
+import { addComment, deleteComment, getComments } from "$/controllers/comment";
+import express from "express";
 
-const router = Router();
+const router = express.Router();
 
-router.get("/test", getUser);
+router.get("/", getComments);
+router.post("/", addComment);
+router.delete("/:id", deleteComment);
 
 export default router;

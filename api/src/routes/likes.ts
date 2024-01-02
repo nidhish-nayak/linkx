@@ -1,8 +1,10 @@
-import { getUser } from "$/controllers/user";
-import { Router } from "express";
+import { addLike, deleteLike, getLikes } from "$/controllers/like";
+import express from "express";
 
-const router = Router();
+const router = express.Router();
 
-router.get("/test", getUser);
+router.get("/", getLikes);
+router.post("/", addLike);
+router.delete("/", deleteLike);
 
 export default router;
