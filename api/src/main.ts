@@ -1,3 +1,4 @@
+import dotenv from "dotenv";
 import express, { type Application } from "express";
 import { zodMiddleware } from "./middlewares/zod.middleware";
 import authRoutes from "./routes/auth";
@@ -8,6 +9,8 @@ import userRoutes from "./routes/users";
 
 const app: Application = express();
 
+// Configs
+dotenv.config();
 app.use(express.json());
 
 // Global catches using zod
