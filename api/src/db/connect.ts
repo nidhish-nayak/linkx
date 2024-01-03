@@ -1,4 +1,7 @@
-import mysql, { type Pool, type PoolConnection } from "mysql2/promise";
+import dotenv from "dotenv";
+import mysql, { type Pool } from "mysql2/promise";
+
+dotenv.config();
 
 const dbPool: Pool = mysql.createPool({
     host: process.env.DB_HOST,
@@ -8,11 +11,18 @@ const dbPool: Pool = mysql.createPool({
 });
 
 export async function executeQuery<L extends string, Q>(query: L, params: Q) {
-    const connection: PoolConnection = await dbPool.getConnection();
+    let connection: mysql.PoolConnection | null = null;
+
     try {
+        connection = await dbPool.getConnection();
         const [results] = await connection.query(query, params);
         return results;
+    } catch (error) {
+        console.error("Error executing query:", error);
+        throw new Error("Error executing query");
     } finally {
-        connection.release();
+        if (connection) {
+            connection.release();
+        }
     }
 }

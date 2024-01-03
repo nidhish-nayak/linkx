@@ -5,51 +5,58 @@ import { RegisterSchema } from "$/types/auth.types";
 import { type Request, type Response } from "express";
 
 export const register = async (req: Request, res: Response) => {
-    const schemaResult = RegisterSchema.safeParse(req);
+    try {
+        const validationResult = RegisterSchema.safeParse(req);
 
-    if (schemaResult.success) {
-        const username = schemaResult.data.body.username;
-        const name = schemaResult.data.body.name;
-        const email = schemaResult.data.body.email;
-        const password = schemaResult.data.body.password;
+        if (!validationResult.success) {
+            return res.status(400).json({
+                message: "Input validation failed.",
+                error: validationResult.error,
+            });
+        }
+
+        const { username, name, email, password } = validationResult.data.body;
 
         // Check if user exists
-        try {
-            const query = "SELECT FROM users WHERE username = ?";
-            const result = await executeQuery(query, [username]);
-            if ([result].length) {
-                return res.status(409).json("User already exists!");
-            }
-        } catch (error) {
-            console.error("Unexpected error:", error);
-            return res.status(500).send("Server Error - Query get user");
+        const userExistsQuery = "SELECT * FROM users WHERE username = ?";
+        const existingUsers = (await executeQuery(userExistsQuery, [
+            username,
+        ])) as [];
+
+        if (existingUsers.length > 0) {
+            return res.status(409).json({
+                message: "User already exists!",
+                existingUsers: existingUsers,
+            });
         }
 
         // Hash password
-        const salt = bcrypt.genSaltSync(10);
+        const saltRounds = 10;
+        const salt = bcrypt.genSaltSync(saltRounds);
         const hashedPassword = bcrypt.hashSync(password, salt);
-        const values = [username, email, hashedPassword, name];
 
         // Insert new user
-        const query =
-            "INSERT INTO users (`username`,`email`,`password`,`name`) VALUE (?)";
+        const insertUserQuery =
+            "INSERT INTO users (`username`,`email`,`password`,`name`) VALUES (?)";
 
-        try {
-            const result = await executeQuery(query, [values]);
-            if ([result].length) {
-                return res.status(409).json("User already exists!");
-            }
-        } catch (error) {
-            console.error("Unexpected error:", error);
-            return res
-                .status(500)
-                .send("Server error - New user registration failed!");
+        const userValues = [username, email, hashedPassword, name];
+        const insertionResult = await executeQuery(insertUserQuery, [
+            userValues,
+        ]);
+
+        if (insertionResult) {
+            return res.status(201).json({
+                message: "User added successfully!",
+                insertionResult: insertionResult,
+            });
         }
-    } else {
-        res.status(401).json({
-            message: "Zod input validation failed for register user request!",
-            error: schemaResult.error,
+
+        return res.status(500).json({
+            message: "Server error - New user registration failed!",
         });
+    } catch (error) {
+        console.error("Unexpected error:", error);
+        return res.status(500).send("Server error - Internal Server Error");
     }
 };
 
