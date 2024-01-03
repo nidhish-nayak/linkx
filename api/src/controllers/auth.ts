@@ -7,12 +7,8 @@ import { type Request, type Response } from "express";
 export const register = async (req: Request, res: Response) => {
     try {
         const validationResult = RegisterSchema.safeParse(req);
-
         if (!validationResult.success) {
-            return res.status(400).json({
-                message: "Input validation failed.",
-                error: validationResult.error,
-            });
+            return res.status(400).send("Input validation failed!");
         }
 
         const { username, name, email, password } = validationResult.data.body;
@@ -24,10 +20,7 @@ export const register = async (req: Request, res: Response) => {
         ])) as [];
 
         if (existingUsers.length > 0) {
-            return res.status(409).json({
-                message: "User already exists!",
-                existingUsers: existingUsers,
-            });
+            return res.status(409).send("User already exists!");
         }
 
         // Hash password
@@ -45,18 +38,12 @@ export const register = async (req: Request, res: Response) => {
         ]);
 
         if (insertionResult) {
-            return res.status(201).json({
-                message: "User added successfully!",
-                insertionResult: insertionResult,
-            });
+            return res.status(201).send("User added successfully!");
         }
 
-        return res.status(500).json({
-            message: "Server error - New user registration failed!",
-        });
+        return res.status(500).send("New user registration failed!");
     } catch (error) {
-        console.error("Unexpected error:", error);
-        return res.status(500).send("Server error - Internal Server Error");
+        return res.status(500).send("Server error!");
     }
 };
 
