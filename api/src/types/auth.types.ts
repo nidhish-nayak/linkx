@@ -1,10 +1,10 @@
-import { type Request } from "express";
+import { z } from "zod";
 
-export interface CustomRequest extends Request {
-    body: {
-        username: string;
-        name: string;
-        email: string;
-        password: string;
-    };
-}
+export const RegisterSchema = z.object({
+    body: z.object({
+        username: z.string(),
+        name: z.string(),
+        email: z.string().email(),
+        password: z.string().min(4),
+    }),
+});
