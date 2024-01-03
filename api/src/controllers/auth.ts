@@ -1,11 +1,16 @@
 import { executeQuery } from "$/db/connect";
 import bcrypt from "bcryptjs";
-import { type Request, type Response } from "express";
 
-export const register = async (req: Request, res: Response) => {
-    // Check if user exists
+import { type CustomRequest } from "$/types/auth.types";
+import { type Response } from "express";
+
+export const register = async (req: CustomRequest, res: Response) => {
     const username = req.body.username;
+    const name = req.body.name;
+    const email = req.body.email;
+    const password = req.body.password;
 
+    // Check if user exists
     try {
         const query = "SELECT FROM users WHERE username = ?";
         const result = await executeQuery(query, [username]);
@@ -17,18 +22,12 @@ export const register = async (req: Request, res: Response) => {
         return res.status(500).send("Server Error - Query get user");
     }
 
-    // Create new user
     // Hash password
     const salt = bcrypt.genSaltSync(10);
-    const hashedPassword = bcrypt.hashSync(req.body.password, salt);
+    const hashedPassword = bcrypt.hashSync(password, salt);
+    const values = [username, email, hashedPassword, name];
 
-    const values = [
-        req.body.username,
-        req.body.email,
-        hashedPassword,
-        req.body.name,
-    ];
-
+    // Insert new user
     const query =
         "INSERT INTO users (`username`,`email`,`password`,`name`) VALUE (?)";
 

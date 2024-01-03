@@ -33,7 +33,6 @@ const config = {
         "@typescript-eslint/no-meaningless-void-operator": "warn",
         "@typescript-eslint/no-confusing-void-expression": "error",
         "@typescript-eslint/no-non-null-asserted-nullish-coalescing": "error",
-        "@typescript-eslint/consistent-type-definitions": [1, "type"],
         "@typescript-eslint/no-unused-vars": [
             "error",
             {
