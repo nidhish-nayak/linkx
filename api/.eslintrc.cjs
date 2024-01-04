@@ -17,10 +17,12 @@ const config = {
     parser: "@typescript-eslint/parser",
     parserOptions: {
         project: path.join(__dirname, "tsconfig.json"),
+        sourceType: "module",
     },
     plugins: ["@typescript-eslint", "prettier"],
     extends: ["plugin:@typescript-eslint/recommended"],
     rules: {
+        "require-await": "error",
         "no-nested-ternary": "off",
         "no-unused-vars": "off",
         "no-plusplus": [
