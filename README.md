@@ -64,10 +64,16 @@ Here's an overview of the project's backend folder structure:
 ```
 📂api/
     ├── src/
+    │   ├── controllers/    # Controllers consists of logic for routes
+    │   ├── db/             # Database configuration and setup
     │   ├── middlewares/    # Middleware configs and setup
+    │   ├── routes/         # Routes for all features
+    │   ├── types/          # Typescript configs
+    │   ├── validations/    # Zod validations
     │   └── main.ts         # root file for server
     │
     └── .eslintrc.cjs       # eslint config
+    └── .env                # environment variables
     └── package.json        # Dependencies for the server-side
     └── tsconfig.json       # Typescript configuration
     └── ...
@@ -175,6 +181,7 @@ Server side commands will be updated as we implement the apis in future...
 -   **Typescript**: TypeScript checks a program for errors before execution.
 -   **Zod**: Zod for consistent input validation, data structuring, and error handling.
 -   **ExpressJS**: NodeJS framework for backend.
+-   **JWT**: Authentication management.
 -   ...Upcoming updates
 
 ## Contributing 🤝
