@@ -3,12 +3,13 @@
         "require": ["tsconfig-paths/register"]
     },
     "compilerOptions": {
-        "target": "ESNext",
-        "module": "NodeNext",
+        "target": "ES6",
+        "module": "CommonJS",
         "outDir": "dist",
         "rootDir": "src",
+        "allowJs": true,
         "strict": true,
-        "moduleResolution": "NodeNext",
+        "moduleResolution": "Node",
         "esModuleInterop": true,
         "skipLibCheck": true,
         "forceConsistentCasingInFileNames": true,

@@ -1,11 +1,11 @@
 import dotenv from "dotenv";
 import express, { type Application } from "express";
 import { zodMiddleware } from "./middlewares/zod.middleware";
-import authRoutes from "./routes/auth";
-import commentRoutes from "./routes/comments";
-import likeRoutes from "./routes/likes";
-import postRoutes from "./routes/posts";
-import userRoutes from "./routes/users";
+import authRoutes from "./routes/auth.route";
+import commentRoutes from "./routes/comment.route";
+import likeRoutes from "./routes/like.route";
+import postRoutes from "./routes/post.route";
+import userRoutes from "./routes/user.route";
 
 const app: Application = express();
 

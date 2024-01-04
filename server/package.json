@@ -1,7 +1,7 @@
 {
-    "name": "api",
+    "name": "server",
     "version": "1.0.0",
-    "main": "index.js",
+    "main": "main.ts",
     "keywords": [],
     "author": "nidhish-nayak",
     "license": "ISC",
@@ -31,6 +31,7 @@
         "bcryptjs": "^2.4.3",
         "cors": "^2.8.5",
         "express": "^4.18.2",
+        "express-async-handler": "^1.2.0",
         "mysql2": "^3.6.5",
         "zod": "^3.22.4"
     }

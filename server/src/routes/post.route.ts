@@ -1,4 +1,4 @@
-import { addPost, deletePost, getPosts } from "$/controllers/post";
+import { addPost, deletePost, getPosts } from "$/controllers/post.controller";
 import express from "express";
 
 const router = express.Router();

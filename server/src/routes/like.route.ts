@@ -1,4 +1,4 @@
-import { addLike, deleteLike, getLikes } from "$/controllers/like";
+import { addLike, deleteLike, getLikes } from "$/controllers/like.controller";
 import express from "express";
 
 const router = express.Router();

@@ -1,11 +1,12 @@
 import { executeQuery } from "$/db/connect";
 import bcrypt from "bcryptjs";
 
-import { RegisterSchema } from "$/types/auth.types";
+import { RegisterSchema } from "$/validations/auth.validation";
 import { type Request, type Response } from "express";
 
 export const register = async (req: Request, res: Response) => {
     try {
+        // Zod validations
         const validationResult = RegisterSchema.safeParse(req);
         if (!validationResult.success) {
             return res.status(400).send("Input validation failed!");
@@ -14,19 +15,17 @@ export const register = async (req: Request, res: Response) => {
         const { username, name, email, password } = validationResult.data.body;
 
         // Check if user exists
-        const userExistsQuery = "SELECT * FROM users WHERE username = ?";
-        const existingUsers = (await executeQuery(userExistsQuery, [
-            username,
-        ])) as [];
-
-        if (existingUsers.length > 0) {
+        const existingUser = await executeQuery(
+            "SELECT * FROM users WHERE username = ?",
+            [username]
+        );
+        if (Array.isArray(existingUser) && existingUser.length > 0) {
             return res.status(409).send("User already exists!");
         }
 
         // Hash password
-        const saltRounds = 10;
-        const salt = bcrypt.genSaltSync(saltRounds);
-        const hashedPassword = bcrypt.hashSync(password, salt);
+        const salt = await bcrypt.genSalt(10);
+        const hashedPassword = await bcrypt.hash(password, salt);
 
         // Insert new user
         const insertUserQuery =
@@ -43,6 +42,7 @@ export const register = async (req: Request, res: Response) => {
 
         return res.status(500).send("New user registration failed!");
     } catch (error) {
+        console.error(error);
         return res.status(500).send("Server error!");
     }
 };

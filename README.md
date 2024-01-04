@@ -26,7 +26,7 @@ LinkX is a full-stack application featuring social media functionalities such as
 
 ## How to navigate the Project ?
 
-The project consists of two folders `client` and `api`. Both are responsible for handling frontend and backend features respectively. Below are the details on how the client and server folders are structured to better understand the architecture of the application.
+The project consists of two folders `client` and `server`. Both are responsible for handling frontend and backend features respectively. Below are the details on how the client and server folders are structured to better understand the architecture of the application.
 
 ### Frontend folder structure:
 
@@ -62,13 +62,13 @@ Here's an overview of the project's frontend folder structure:
 Here's an overview of the project's backend folder structure:
 
 ```
-📂api/
+📂server/
     ├── src/
     │   ├── controllers/    # Controllers consists of logic for routes
     │   ├── db/             # Database configuration and setup
     │   ├── middlewares/    # Middleware configs and setup
     │   ├── routes/         # Routes for all features
-    │   ├── types/          # Typescript configs
+    │   ├── types/          # Typescript types exports
     │   ├── validations/    # Zod validations
     │   └── main.ts         # root file for server
     │
@@ -88,7 +88,7 @@ Here's an overview of the project's backend folder structure:
 
 ## Installation 💻
 
-To make the whole application run locally on your computer, you have to run both `client` and `api` separately in the terminal simultaneously.
+To make the whole application run locally on your computer, you have to run both `client` and `server` separately in the terminal simultaneously.
 
 ### Project setup:
 
@@ -139,7 +139,7 @@ Setting up the server is similar to frontend setup given above. Follow the below
 1. Navigate to the api directory:
 
     ```bash
-    cd api
+    cd server
     ```
 
 2. Install the dependencies using npm:
@@ -151,15 +151,13 @@ Setting up the server is similar to frontend setup given above. Follow the below
 3. Start the development server for backend:
 
     ```bash
-    npm run dev
+    npm start
     ```
 
 4. Open your browser and visit `http://localhost:3000/` to access the backend of LinkX application.
 
 > **Note**
-> Make sure both client and api are running locally for the fullstack features to work.
-
-Server side commands will be updated as we implement the apis in future...
+> Make sure both client and server are running locally for the fullstack features to work.
 
 ## Technologies Used 🔧
 

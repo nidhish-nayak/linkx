@@ -1,4 +1,4 @@
-import { getUser, updateUser } from "$/controllers/user";
+import { getUser, updateUser } from "$/controllers/user.controller";
 import express from "express";
 
 const router = express.Router();
