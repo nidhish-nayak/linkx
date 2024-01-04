@@ -1,3 +1,4 @@
+const cors = require("cors");
 import dotenv from "dotenv";
 import express, { type Application } from "express";
 import { zodMiddleware } from "./middlewares/zod.middleware";
@@ -12,6 +13,7 @@ const app: Application = express();
 // Configs
 dotenv.config();
 app.use(express.json());
+app.use(cors("*"));
 
 // Global catches using zod
 app.use(zodMiddleware);
