@@ -24,10 +24,13 @@ const Register = () => {
 
     const registerUserHandler = async (event: React.FormEvent) => {
         event.preventDefault();
-        const API_URL = "http://localhost:3000";
+        const API_URL =
+            process.env.NODE_ENV === "production"
+                ? `${process.env.SERVER_URL}/api/auth/register`
+                : "http://localhost:3000/api/auth/register";
 
         try {
-            const response = await axios.post(`${API_URL}/api/auth/register`, {
+            const response = await axios.post(API_URL, {
                 username: username,
                 email: email,
                 password: password,
