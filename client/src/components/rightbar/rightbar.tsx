@@ -43,7 +43,9 @@ const Rightbar = () => {
                             />
                             <div className="activity-container">
                                 <div>
-                                    <p className="user-name">Keerthanajand</p>
+                                    <span className="user-name">
+                                        Keerthanajand Manjunathan Nayak
+                                    </span>
                                     <p className="user-time">1 min ago</p>
                                 </div>
                                 <p className="user-activity">
@@ -60,7 +62,7 @@ const Rightbar = () => {
                             />
                             <div className="activity-container">
                                 <div>
-                                    <p className="user-name">Jane Doe</p>
+                                    <span className="user-name">Jane Doe</span>
                                     <p className="user-time">1 min ago</p>
                                 </div>
                                 <p className="user-activity">

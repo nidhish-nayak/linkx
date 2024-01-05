@@ -43,9 +43,10 @@
                     .userInfo {
                         display: flex;
                         align-items: center;
-                        justify-content: center;
+                        justify-content: flex-start;
                         gap: 20px;
                         position: relative;
+                        width: 100%;
 
                         img {
                             min-width: 40px;
@@ -82,18 +83,20 @@
                         .activity-container {
                             display: flex;
                             flex-direction: column;
+                            width: 100%;
 
                             div {
                                 display: flex;
                                 justify-content: space-between;
                                 align-items: center;
                                 gap: 20px;
+                                width: 100%;
 
                                 .user-name {
                                     font-weight: 500;
                                     font-size: 16px;
                                     color: themed("textColorSoft");
-                                    max-width: 100px;
+                                    max-width: 140px;
                                     white-space: nowrap;
                                     overflow: hidden;
                                     text-overflow: ellipsis;
