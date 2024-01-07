@@ -47,6 +47,21 @@ export const register = async (req: Request, res: Response) => {
     }
 };
 
-export const login = (_req: Request, _res: Response) => {};
+export const login = async (req: Request, res: Response) => {
+    const query = "SELECT * FROM users WHERE username = ?";
+    const existingUser = await executeQuery(query, [req.body.username]);
+
+    if (Array.isArray(existingUser) && existingUser.length === 0) {
+        return res.status(404).send("User not found!");
+    }
+
+    if (Array.isArray(existingUser) && existingUser) {
+        const checkPassword = bcrypt.compareSync(
+            req.body.password,
+            existingUser[0].password
+        );
+        console.log(checkPassword);
+    }
+};
 
 export const logout = (_req: Request, _res: Response) => {};
