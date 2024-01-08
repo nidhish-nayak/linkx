@@ -8,3 +8,10 @@ export const RegisterSchema = z.object({
         password: z.string().min(4),
     }),
 });
+
+export const LoginSchema = z.object({
+    body: z.object({
+        username: z.string(),
+        password: z.string().min(4),
+    }),
+});

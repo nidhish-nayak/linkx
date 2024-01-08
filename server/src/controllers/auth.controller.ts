@@ -1,7 +1,9 @@
+import config from "$/config/config";
 import { executeQuery } from "$/db/connect";
 import bcrypt from "bcryptjs";
+import jwt from "jsonwebtoken";
 
-import { RegisterSchema } from "$/validations/auth.validation";
+import { LoginSchema, RegisterSchema } from "$/validations/auth.validation";
 import { type Request, type Response } from "express";
 
 export const register = async (req: Request, res: Response) => {
@@ -19,7 +21,7 @@ export const register = async (req: Request, res: Response) => {
             "SELECT * FROM users WHERE username = ?",
             [username]
         );
-        if (Array.isArray(existingUser) && existingUser.length > 0) {
+        if (existingUser.length > 0) {
             return res.status(409).send("User already exists!");
         }
 
@@ -48,19 +50,44 @@ export const register = async (req: Request, res: Response) => {
 };
 
 export const login = async (req: Request, res: Response) => {
-    const query = "SELECT * FROM users WHERE username = ?";
-    const existingUser = await executeQuery(query, [req.body.username]);
+    try {
+        const { jwtKey } = config;
 
-    if (Array.isArray(existingUser) && existingUser.length === 0) {
-        return res.status(404).send("User not found!");
-    }
+        // Zod validations
+        const validationResult = LoginSchema.safeParse(req);
+        if (!validationResult.success) {
+            return res.status(400).send("Input validation failed!");
+        }
 
-    if (Array.isArray(existingUser) && existingUser) {
-        const checkPassword = bcrypt.compareSync(
-            req.body.password,
-            existingUser[0].password
-        );
-        console.log(checkPassword);
+        const { username, password } = validationResult.data.body;
+
+        // Check if the user exists
+        const query = "SELECT * FROM users WHERE username = ?";
+        const [existingUser] = await executeQuery(query, [username]);
+
+        if (!existingUser) {
+            return res
+                .status(404)
+                .json({ error: "User is not registered. Please sign up." });
+        }
+
+        // Compare passwords
+        const hashedPassword = existingUser.password;
+        const isPasswordValid = await bcrypt.compare(password, hashedPassword);
+
+        if (isPasswordValid && jwtKey) {
+            const token = jwt.sign({ username }, jwtKey);
+            return res
+                .status(200)
+                .json({ token, message: "User is authorized" });
+        } else {
+            return res
+                .status(401)
+                .json({ error: "Invalid username or password" });
+        }
+    } catch (error) {
+        console.error("Error during login:", error);
+        return res.status(500).json({ error: "Internal Server Error" });
     }
 };
 

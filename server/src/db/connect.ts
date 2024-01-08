@@ -1,13 +1,13 @@
-import dotenv from "dotenv";
-import mysql, { type Pool } from "mysql2/promise";
+import config from "$/config/config";
+import mysql, { type Pool, type RowDataPacket } from "mysql2/promise";
 
-dotenv.config();
+const { dbConfig } = config;
 
 const dbPool: Pool = mysql.createPool({
-    host: process.env.DB_HOST,
-    user: process.env.DB_USER,
-    password: process.env.DB_PASSWORD,
-    database: process.env.DB_NAME,
+    host: dbConfig.host,
+    user: dbConfig.user,
+    password: dbConfig.password,
+    database: dbConfig.database,
 });
 
 export async function executeQuery<L extends string, Q>(query: L, params: Q) {
@@ -15,7 +15,10 @@ export async function executeQuery<L extends string, Q>(query: L, params: Q) {
 
     try {
         connection = await dbPool.getConnection();
-        const [results] = await connection.query(query, params);
+        const [results] = await connection.query<RowDataPacket[]>(
+            query,
+            params
+        );
         return results;
     } catch (error) {
         console.error("Error executing query:", error);
