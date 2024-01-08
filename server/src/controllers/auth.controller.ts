@@ -58,13 +58,13 @@ export const login = async (req: Request, res: Response) => {
         if (!validationResult.success) {
             return res.status(400).send("Input validation failed!");
         }
-
         const { username, password } = validationResult.data.body;
 
         // Check if the user exists
-        const query = "SELECT * FROM users WHERE username = ?";
-        const [existingUser] = await executeQuery(query, [username]);
-
+        const [existingUser] = await executeQuery(
+            "SELECT * FROM users WHERE username = ?",
+            [username]
+        );
         if (!existingUser) {
             return res
                 .status(404)
@@ -74,7 +74,6 @@ export const login = async (req: Request, res: Response) => {
         // Compare passwords
         const hashedPassword = existingUser.password;
         const isPasswordValid = await bcrypt.compare(password, hashedPassword);
-
         if (isPasswordValid && jwtKey) {
             const token = jwt.sign({ username }, jwtKey);
             return res
@@ -86,7 +85,7 @@ export const login = async (req: Request, res: Response) => {
                 .json({ error: "Invalid username or password" });
         }
     } catch (error) {
-        console.error("Error during login:", error);
+        console.error("Error during login!");
         return res.status(500).json({ error: "Internal Server Error" });
     }
 };

@@ -6,7 +6,11 @@ export type AuthContextTypes = {
 };
 
 export const AuthContext = createContext<AuthContextTypes>({
-    currentUser: null,
+    currentUser: {
+        id: 1,
+        name: "Nidhish Nayak",
+        profilePic: "https://avatars.githubusercontent.com/u/76598208?v=4",
+    },
     login: () => {},
 });
 
