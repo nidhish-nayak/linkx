@@ -49,6 +49,10 @@ const Login = () => {
                         <input type="password" placeholder="Password" />
                         <button type="submit">Login</button>
                     </form>
+                    <span style={{ background: "lightgrey", padding: "5px" }}>
+                        Click on login for direct login without any details!
+                        (TEST)
+                    </span>
                 </div>
             </div>
         </div>
